@@ -253,7 +253,7 @@ int main( int argc, char* argv[] )
 
 			// If false was returned, socket should be closed
 			if (!processFurther) {
-				close(it->sock);
+				// Setting socket of connection to -1 so is_invalid_connection will turn true and erase connection
 				it->sock = -1;
 			}
 		}
